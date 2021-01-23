@@ -11,7 +11,7 @@ import Lottie from 'react-lottie';
 export const Navbar = (props) => {
 
 
-    const [animationState, setAnimationState] = useState({ isStopped: false, isPaused: false });
+    const [animationState] = useState({ isStopped: false, isPaused: false });
 
     const defaultOptions = {
         loop: true,
