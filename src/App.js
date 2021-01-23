@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import NavBar from './iu/NavBar'
+import NavBar from './Navbar/index'
 
 class App extends Component {
     render() {
@@ -14,6 +14,7 @@ class App extends Component {
                 <Route path='/' exact />
             </Switch>
             </Router>
+            
             </>
          
 
