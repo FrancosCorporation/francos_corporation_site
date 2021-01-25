@@ -28,17 +28,21 @@ export const NavLink = styled(Link)`
   }
 `;
 
-export const Logo = styled(Link)`
-  width: 10%;
-  height: 100%;
-  cursor: pointer;
-  &.active {
-    color: #ff00ff;
-  }
-  @media screen and (max-width: 768px) {
-    width: 30%;
+export const Envolv = styled(Link)`
+  background-color: #fff;
+  border-radius: 25px;
+  `;
+
+export const Logo = styled.div`
+  padding-left:25px;
+  display: flex;
+  justify-content:center;
+  width: 20%;
+  height:102%;
+  @media screen and (max-width: 800px) {
+    padding-left:25px;
+    width: 12%;
     height: 100%;
-    cursor: pointer;
   }
 `;
 

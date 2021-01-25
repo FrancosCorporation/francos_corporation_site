@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/jsons/rocket.json';
+import logo from '../../assets/jsons/work.json';
 import {
     Nav,
     NavLink,
@@ -7,7 +7,7 @@ import {
     NavMenu,
     NavBtn,
     NavBtnLink,
-    Logo
+    Logo, Envolv
 } from './navbarElements';
 import Lottie from 'react-lottie';
 function NavBar() {
@@ -24,8 +24,9 @@ function NavBar() {
     };
     return (
         <Nav>
-            <Logo to='/'>
-                <Lottie options={defaultOptions} />
+            <Logo>
+                <Envolv to='/'><Lottie options={defaultOptions} width={110} /></Envolv>
+
             </Logo>
             <Bars />
             <NavMenu>

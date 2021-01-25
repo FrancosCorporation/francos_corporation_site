@@ -12,6 +12,13 @@ export const Display = styled.nav`
 `;
 
 export const LogoStyled = styled.nav`
-  width:300px;
+  width:350px;
   cursor: pointer;
+  background-color: #ffffff;
+  border-radius:100px;
+`;
+
+export const TelaFundo = styled.nav`
+position:absolute;
+background-color:#000000;
 `;
