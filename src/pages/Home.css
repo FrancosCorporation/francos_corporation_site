@@ -1,0 +1,9 @@
+.Home {
+  text-align: center;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-height: 50%;
+}
