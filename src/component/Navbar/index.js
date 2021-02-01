@@ -25,7 +25,7 @@ function NavBar() {
     return (
         <Nav>
             <Logo>
-                <Envolv to='/'><Lottie className="animate" options={defaultOptions} width={105} /></Envolv>
+                <Envolv to='/'><Lottie className="animate" options={defaultOptions} /></Envolv>
                 <h1>Home</h1>
             </Logo>
             <Bars />

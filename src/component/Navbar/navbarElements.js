@@ -35,6 +35,10 @@ export const NavLink = styled(Link)`
     text-decoration:underline;
     
   }
+  @media screen and (max-width: 808px){
+    padding: 0 1rem;
+    padding-right:10px;
+  }
   &.active {
     padding-bottom:20px;
     text-decoration:underline;
@@ -46,26 +50,24 @@ export const Envolv = styled(Link)`
   border-radius: 30px;
   border: 2px  #fff solid;
   display: flex;
-  text-decoration: none;
   cursor: pointer;
   &:hover{
     opacity:40%;
   }
- 
   `;
 
 export const Logo = styled.div`
   display: flex;
   justify-content:center;
   padding-top:3px;
-  width: 10%;
-  height:95%;
+  width: 110px;
+  height:98px;
   h1{
     transform:rotate(270deg);
     position:absolute;
-    padding-left:15px;
     color:#000;
     font-size:1.4rem;
+    padding-left:15px;
     padding-top:80px;
     text-indent:20px;
     font-weight: normal;
@@ -76,11 +78,16 @@ export const Logo = styled.div`
       color:#fff;
     }
   }
-  @media screen and (max-width: 850px) {
+  @media screen and (max-width: 768px) {
     display:block;
-    padding:1px;
-    padding-top: 10px;
-    height: 100%;
+    padding-top: 3px;
+    width:90px;
+    h1{
+    font-size:1.1rem;
+    padding-left:130px;
+    padding-top:0px;
+    text-indent:-9px;
+    }
   }
   .active{
     h1{
