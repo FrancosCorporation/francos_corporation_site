@@ -3,17 +3,24 @@ import styled from 'styled-components';
 import { FaBars } from 'react-icons/fa';
 
 export const Nav = styled.nav`
-  background: #515151;
+  background: #000000;
   height: 100px;
+  width: 100vw;
   display: flex;
-  justify-content: space-between;
-  padding: 0.1rem;
-  z-index: 1;
-  font-size:25px;
+  justify-content: space-around;
+  z-index: 10;
+  font-size: 25px;
   font-family: 'Lobster';
   font-weight: bold;
+  opacity:85%;
   /* Third Nav */
   /* justify-content: flex-start; */
+  
+  @media screen and (max-width: 768px){
+    padding-left:30px;
+    padding-top:5px;
+    justify-content:space-between;
+  }
 `;
 
 export const NavLink = styled(Link)`
@@ -21,27 +28,51 @@ export const NavLink = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   cursor: pointer;
+  &:hover{
+    color: white;
+    text-decoration:underline;
+    
+  }
   &.active {
-    color: #15cdfc;
+    padding-bottom:20px;
+    text-decoration:underline;
+    
   }
 `;
 
 export const Envolv = styled(Link)`
   background-color: #fff;
   border-radius: 25px;
+  display: flex;
+  text-decoration: none;
+  pointer-events:none;
+  &:hover{
+    opacity:90%;
+  }
   `;
 
 export const Logo = styled.div`
-  padding-left:25px;
   display: flex;
   justify-content:center;
-  width: 20%;
-  height:102%;
-  @media screen and (max-width: 800px) {
-    padding-left:25px;
-    width: 12%;
+  padding-top:3px;
+  width: 10%;
+  height:95%;
+  h1{
+    transform:rotate(270deg);
+    position:absolute;
+    padding-left:1vw;
+    color:#000;
+    font-size:1.4rem;
+    padding-top:9.5vh;
+    text-indent:20px;
+    font-weight: normal;
+  }
+  @media screen and (max-width: 850px) {
+    display:block;
+    padding:1px;
+    padding-top: 10px;
     height: 100%;
   }
 `;
@@ -55,9 +86,10 @@ export const Bars = styled(FaBars)`
     top: 0;
     right: 0;
     transform: translate(-100%, 75%);
-    font-size: 2rem;
+    font-size: 2.5rem;
     cursor: pointer;
   }
+
 `;
 
 export const NavMenu = styled.div`
@@ -88,20 +120,23 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled(Link)`
   border-radius: 25px;
-  background: #256ce1;
-  font-size:20px;
-  padding: 10px 22px;
+  border: 3px solid #fff;
+  font-size:25px;
+  padding: 5px 20px;
   color: #fff;
-  outline: none;
-  border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   text-decoration: none;
   /* Second Nav */
-  margin-left: 24px;
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: #fff;
+    background: #00ffff;
     color: #010606;
+    border: 3px solid #00ffff;
+  }
+  &.active {
+    background: #0080ff;
+    color: #fff;
+    border: 3px solid #0080ff;
   }
 `;

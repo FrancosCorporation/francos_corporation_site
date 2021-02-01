@@ -11,3 +11,11 @@ img {
   font-size: 32px;
   font-family: "Lobster";
 }
+
+body {
+  background-color: #1b74e9c5;
+}
+
+#nav-bar {
+  position: absolute;
+}

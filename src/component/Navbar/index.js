@@ -25,23 +25,23 @@ function NavBar() {
     return (
         <Nav>
             <Logo>
-                <Envolv to='/'><Lottie options={defaultOptions} width={110} /></Envolv>
-
+                <Envolv to='/'><Lottie className="animate" options={defaultOptions} width={110} /></Envolv>
+                <h1>Home</h1>
             </Logo>
             <Bars />
             <NavMenu>
-                <NavLink to='/sobre' activeStyle>
-                    Sobre
-                        </NavLink>
-                <NavLink to='/servicos' activeStyle>
-                    Serviços
-          </NavLink>
-                <NavLink to='/contato' activeStyle>
-                    Contato
-          </NavLink>
                 <NavLink to='/entrar' activeStyle>
                     Entrar
-          </NavLink>
+                                        </NavLink>
+                <NavLink to='/servicos' activeStyle>
+                    Serviços
+                                        </NavLink>
+                <NavLink to='/contato' activeStyle>
+                    Contato
+                                         </NavLink>
+                <NavLink to='/sobre' activeStyle>
+                    Sobre
+                                         </NavLink>
                 {/* Second Nav */}
                 {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
             </NavMenu>
