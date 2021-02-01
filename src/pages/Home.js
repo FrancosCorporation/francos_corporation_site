@@ -19,7 +19,7 @@ function Home() {
         setTimeout(() => {
             setLoading(false)
 
-        }, 0);
+        }, 3000);
     }, []);
     return (
         <div>
