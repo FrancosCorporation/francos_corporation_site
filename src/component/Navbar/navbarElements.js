@@ -43,14 +43,15 @@ export const NavLink = styled(Link)`
 `;
 
 export const Envolv = styled(Link)`
-  background-color: #fff;
-  border-radius: 25px;
+  border-radius: 30px;
+  border: 2px  #fff solid;
   display: flex;
   text-decoration: none;
-  pointer-events:none;
+  cursor: pointer;
   &:hover{
-    opacity:90%;
+    opacity:40%;
   }
+ 
   `;
 
 export const Logo = styled.div`
@@ -62,18 +63,29 @@ export const Logo = styled.div`
   h1{
     transform:rotate(270deg);
     position:absolute;
-    padding-left:1vw;
+    padding-left:15px;
     color:#000;
     font-size:1.4rem;
-    padding-top:9.5vh;
+    padding-top:80px;
     text-indent:20px;
     font-weight: normal;
+    pointer-events:none;
+  }
+  &:hover{
+    h1{
+      color:#fff;
+    }
   }
   @media screen and (max-width: 850px) {
     display:block;
     padding:1px;
     padding-top: 10px;
     height: 100%;
+  }
+  .active{
+    h1{
+      color:#0000ff;
+    }
   }
 `;
 
