@@ -1,5 +1,23 @@
 # Francos Corporation Site
 
+## 🐳 Instalação e Execução (Docker) — recomendado
+
+### Pré-requisitos
+- [Docker](https://docs.docker.com/get-docker/) + Docker Compose
+
+### Rodar com Docker
+```bash
+docker compose up --build
+```
+
+
+### Sem Docker (local)
+```bash
+npm install
+npm start
+```
+
+
 Site institucional da Francos Corporation em **React** (Create React App +
 React Bootstrap), com home animada, seções de portfólio e conteúdo
 internacionalizável.
