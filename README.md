@@ -1,78 +1,70 @@
-# Francos Corporation Site
+# Francos Corporation
 
-## 🐳 Instalação e Execução (Docker) — recomendado
+Site institucional da Francos Corporation. A página apresenta soluções digitais, explica o processo de trabalho e direciona conversas para os perfis públicos da marca.
 
-### Pré-requisitos
-- [Docker](https://docs.docker.com/get-docker/) + Docker Compose
+## Requisitos
 
-### Rodar com Docker
+- Node.js 22.12 ou superior e npm, para desenvolvimento local.
+- Docker com Docker Compose, para executar a imagem de produção.
+
+## Desenvolvimento local
+
+```bash
+npm ci
+npm run dev
+```
+
+O Vite informa o endereço local, normalmente `http://localhost:5173`.
+
+## Verificações e build
+
+```bash
+npm run lint
+npm audit --audit-level=high
+npm run build
+npm run preview
+```
+
+O build otimizado é escrito em `dist/`. O lint usa as regras recomendadas do Biome, incluindo verificações de acessibilidade para JSX.
+
+## Docker Compose
+
 ```bash
 docker compose up --build
 ```
 
+A aplicação fica disponível em `http://localhost:3000`. Por padrão, a porta do host é vinculada a `127.0.0.1`; para escolher outra porta:
 
-### Sem Docker (local)
 ```bash
-npm install
-npm start
+SITE_PORT=8080 docker compose up --build
 ```
 
-
-Site institucional da Francos Corporation em **React** (Create React App +
-React Bootstrap), com home animada, seções de portfólio e conteúdo
-internacionalizável.
-
-![React](https://img.shields.io/badge/React-17-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-5-7952B3?style=flat-square&logo=bootstrap&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![License](https://img.shields.io/badge/license-MIT-green?style=flat-square)
-![Status](https://img.shields.io/badge/status-2022-legacy-lightgrey?style=flat-square)
-
-## Sobre
-
-Primeira versão do site institucional da marca, criada em 2022 para
-apresentar a empresa e seus trabalhos. Usa roteamento com `react-router-dom`
-e dados de conteúdo em arquivos JSON (textos em inglês, "rocket" e
-"work"), além de uma home estilizada com `styled-components`.
+A imagem usa build multi-stage em Node 24, executa com o usuário sem privilégios `node` e verifica disponibilidade em `/healthz`. O container tem filesystem somente leitura, remove capabilities Linux e habilita `no-new-privileges`.
 
 ## Funcionalidades
 
-Comprovadas pelo código em `src/`:
+- Página única em português, adaptada para desktop e dispositivos móveis.
+- Seções de soluções digitais, abordagem de trabalho, apresentação institucional e contato.
+- Menu móvel acessível por teclado, atalho para pular ao conteúdo e suporte à preferência por movimento reduzido.
+- Metadados para busca e compartilhamento, manifesto e favicon próprios.
+- Arquivo de verificação do Google servido na raiz do build.
+- Servidor Node de produção com fallback para rotas do site, tipos MIME e cabeçalhos de segurança.
 
-- Estrutura de rotas em `routes.js` com `BrowserRouter` (`App.js`).
-- Página **Home** com estilos próprios (`pages/Home.js`, `HomeStyled.js`,
-  `Home.css`).
-- **Navbar** com elementos gerados a partir de configuração
-  (`component/Navbar`).
-- **Conteúdo em JSON** para facilitar edição (`assets/jsons/eng.json`,
-  `rocket.json`, `work.json`).
-- Assets de marca em `assets/images/`.
+Login, cadastro e envio de formulários não fazem parte deste projeto, que não contém API. Os links de contato direcionam ao [perfil da Francos Corporation no GitHub](https://github.com/FrancosCorporation) e ao [perfil profissional no LinkedIn](https://www.linkedin.com/in/francoscorp/).
 
-## Como rodar
+## Estrutura
 
-```bash
-npm install
-npm start        # http://localhost:3000
-npm run build    # build de produção (pasta build/)
-```
-
-## Estrutura do projeto
-
-```
-public/                 # index.html, manifest
+```text
+index.html                 # Metadados e ponto de entrada Vite
 src/
-├── App.js / routes.js  # roteamento
-├── component/Navbar/   # barra de navegação
-├── pages/Home.*        # página inicial
-└── assets/             # imagens e conteúdos JSON
+├── components/            # Navegação e ícones
+├── pages/Home.jsx         # Conteúdo institucional
+└── styles.css             # Estilos responsivos
+public/                    # Manifesto, favicon e arquivo de verificação
+server.mjs                 # Servidor estático de produção
+compose.yaml               # Execução local via Compose
+Dockerfile                 # Build multi-stage
 ```
-
-## Observações
-
-- O `.env` necessário ao CRA era apenas o `SKIP_PREFLIGHT_CHECK=true` (por
-  conflito de versões do `babel-loader`); foi substituído por `.env.example`.
-- Arquivos de sistema (`.DS_Store`) e cache do ESLint foram removidos do
-  repositório.
 
 ## Licença
 
